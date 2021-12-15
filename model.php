@@ -17,14 +17,35 @@ class model{
 			echo "connect failed";
 		}
 		else{
-			echo "connected";
+			$this->conn;
 		}
 
+
+
 	}// constract close
+
+	public function insertdate($post){
+
+		$name= $_POST['name'];
+		$roll= $_POST['roll'];
+		$age= $_POST['age'];
+		$sql= "INSERT INTO student(name,roll,age)VALUES('$name','$roll','$age')"; 
+		$result=$this->conn->query($sql);
+		if($result){
+
+			header('location:index.php?msg=ins');
+
+		}
+		else{
+			echo "error".$sql."<br>".$this->conn->error;
+		}
+
+
+			
+		}
 	
 }// class close
 
-$obj = new model();
 
 
 ?>

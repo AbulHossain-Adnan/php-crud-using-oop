@@ -1,3 +1,12 @@
+<?php
+include "model.php";
+
+$obj = new model();
+if(isset($_POST['submit'])){
+
+	echo $obj->insertdate($_POST);
+}
+?>
 <!doctype html>
 <html lang="en">
 	<head>
@@ -22,7 +31,7 @@
 											<th scope="col">Name</th>
 											<th scope="col">Roll</th>
 											<th scope="col">Age</th>
-											<th scope="col">Handle</th>
+											<th scope="col">action</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -45,7 +54,7 @@
 					<div class="card-body">
 						<div class="card  mb-3">
 							<div class="card-header text-white bg-primary text-center">Add New Student+</div>
-							<form action="{{}}" method="post">
+							<form action="" method="post">
 								
 								<div class="mb-3">
 									<label for="exampleInputEmail1" class="form-label">Name</label>
@@ -59,7 +68,7 @@
 									<label for="exampleInputPassword1" class="form-label">Age</label>
 									<input type="text" class="form-control" name="age" id="exampleInputPassword1" placeholder="Enter your age">
 								</div>
-								<button type="submit" class="btn btn-primary">Submit</button>
+								<button type="submit" name="submit" class="btn btn-primary">Submit</button>
 							</form>
 						</div>
 					</div>
