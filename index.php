@@ -53,6 +53,14 @@ if(isset($_POST['submit'])){
 				<div class="card">
 					<div class="card-body">
 						<div class="card  mb-3">
+							<?php 
+							if(isset($_GET['msg']) AND $_GET['msg']=='ins'){
+								echo '<div class="alert alert-primary" role="alert">
+ Data inserted succesfully!
+</div>';
+							}
+
+							?>
 							<div class="card-header text-white bg-primary text-center">Add New Student+</div>
 							<form action="" method="post">
 								
